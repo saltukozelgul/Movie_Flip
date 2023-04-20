@@ -6,3 +6,26 @@ body {
     border-right-style: none !important;
 }
 
+.MuiFormControlLabel-label {
+    font-size: 12px !important;
+}
+
+.ps-sidebar-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .ps-sidebar-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
+/* Override for Cauresel */
+.carousel-caption {
+    /* black but %50 alpha */
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: left;
+}

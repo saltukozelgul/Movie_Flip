@@ -8,7 +8,13 @@ import {
   useProSidebar,
 } from "react-pro-sidebar";
 import { SidebarHeader } from "./SidebarHeader";
-import { Typography, Button } from "@mui/material";
+import {
+  Typography,
+  Button,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+} from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
@@ -115,7 +121,7 @@ export default function Navbar(props) {
             textAlign: "center",
           }}
         >
-          <Button variant="outlined">FLIP A MOVIE</Button>
+          <Button variant="outlined">FLIP!</Button>
         </div>
         <Menu menuItemStyles={menuItemStyles} iconShape="square">
           <SubMenu
@@ -125,10 +131,79 @@ export default function Navbar(props) {
                 style={{ color: themes["dark"].menu.icon }}
               />
             }
-            label="Kategoriler"
+            label="Categories"
           >
-            <MenuItem>Component 1</MenuItem>
-            <MenuItem>Component 2</MenuItem>
+            <FormGroup>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Action" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Adventure" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Animation" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Comedy" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Crime" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Documentary" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Drama" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Family" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Fantasy" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="History" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Horror" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Music" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Mystery" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="Romance" />
+              </MenuItem>
+            </FormGroup>
+          </SubMenu>
+          <SubMenu
+            icon={
+              <FontAwesomeIcon
+                icon={faList}
+                style={{ color: themes["dark"].menu.icon }}
+              />
+            }
+            label="Vote Average"
+          >
+            <FormGroup>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="8 - 10" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="6 - 8" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="4  6" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="2 - 4" />
+              </MenuItem>
+              <MenuItem>
+                <FormControlLabel control={<Checkbox />} label="0 - 2" />
+              </MenuItem>
+            </FormGroup>
           </SubMenu>
         </Menu>
       </Sidebar>
