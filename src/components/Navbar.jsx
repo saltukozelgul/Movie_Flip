@@ -5,9 +5,15 @@ import {
   SubMenu,
   Sidebar,
   menuClasses,
+  useProSidebar,
 } from "react-pro-sidebar";
+import { SidebarHeader } from "./SidebarHeader";
+import { Typography, Button } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
+  const { toggleSidebar, collapseSidebar, broken, collapsed } = useProSidebar();
   // hex to rgba converter
   const hexToRgba = (hex, alpha) => {
     const r = parseInt(hex.slice(1, 3), 16);
@@ -103,9 +109,28 @@ export default function Navbar() {
       <div
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
+        <SidebarHeader style={{ marginBottom: "24px", marginTop: "16px" }} />
+        <div
+          style={{
+            padding: "0 24px",
+            marginBottom: "8px",
+            textAlign: "center",
+          }}
+        >
+          <Button style={{ backgroundColor: "#0098e5" }} variant="contained">
+            FLIP A MOVIE
+          </Button>
+        </div>
         <Menu menuItemStyles={menuItemStyles} iconShape="square">
-          <MenuItem>Flip a Movie</MenuItem>
-          <SubMenu label="Components">
+          <SubMenu
+            icon={
+              <FontAwesomeIcon
+                icon={faList}
+                style={{ color: themes["dark"].menu.icon }}
+              />
+            }
+            label="Kategoriler"
+          >
             <MenuItem>Component 1</MenuItem>
             <MenuItem>Component 2</MenuItem>
           </SubMenu>
