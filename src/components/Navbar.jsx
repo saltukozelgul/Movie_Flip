@@ -12,7 +12,7 @@ import { Typography, Button } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const { toggleSidebar, collapseSidebar, broken, collapsed } = useProSidebar();
   // hex to rgba converter
   const hexToRgba = (hex, alpha) => {
@@ -98,16 +98,14 @@ export default function Navbar() {
   };
 
   return (
-    <Sidebar
-      image=""
-      breakPoint="lg"
-      backgroundColor={hexToRgba(themes["dark"].sidebar.backgroundColor, 1)}
-      rootStyles={{
-        color: themes["dark"].sidebar.color,
-      }}
-    >
-      <div
-        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
+    <div style={{ display: "flex", height: "100vh" }}>
+      <Sidebar
+        image=""
+        breakPoint="lg"
+        backgroundColor={hexToRgba(themes["dark"].sidebar.backgroundColor, 1)}
+        rootStyles={{
+          color: themes["dark"].sidebar.color,
+        }}
       >
         <SidebarHeader style={{ marginBottom: "24px", marginTop: "16px" }} />
         <div
@@ -117,9 +115,7 @@ export default function Navbar() {
             textAlign: "center",
           }}
         >
-          <Button style={{ backgroundColor: "#0098e5" }} variant="contained">
-            FLIP A MOVIE
-          </Button>
+          <Button variant="outlined">FLIP A MOVIE</Button>
         </div>
         <Menu menuItemStyles={menuItemStyles} iconShape="square">
           <SubMenu
@@ -135,7 +131,8 @@ export default function Navbar() {
             <MenuItem>Component 2</MenuItem>
           </SubMenu>
         </Menu>
-      </div>
-    </Sidebar>
+      </Sidebar>
+      <main>{props.children}</main>
+    </div>
   );
 }
