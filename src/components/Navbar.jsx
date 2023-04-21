@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Menu,
   MenuItem,
@@ -17,6 +18,7 @@ import {
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar(props) {
   const { toggleSidebar, collapseSidebar, broken, collapsed } = useProSidebar();
@@ -104,7 +106,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div style={{ display: "flex", height: "100%" }}>
       <Sidebar
         image=""
         breakPoint="lg"
@@ -133,77 +135,33 @@ export default function Navbar(props) {
             }
             label="Categories"
           >
-            <FormGroup>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Action" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Adventure" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Animation" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Comedy" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Crime" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Documentary" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Drama" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Family" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Fantasy" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="History" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Horror" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Music" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Mystery" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="Romance" />
-              </MenuItem>
-            </FormGroup>
+            <MenuItem component={<Link to="/category/action" />}>
+              Action
+            </MenuItem>
+            <MenuItem component={<Link to="/category/adventure" />}>
+              Adventure
+            </MenuItem>
+            <MenuItem component={<Link to="/category/comedy" />}>
+              Comedy
+            </MenuItem>
+            <MenuItem component={<Link to="/category/drama" />}>Drama</MenuItem>
+            <MenuItem component={<Link to="/category/fantasy" />}>
+              Fantasy
+            </MenuItem>
           </SubMenu>
           <SubMenu
             icon={
               <FontAwesomeIcon
-                icon={faList}
+                icon={faFilter}
                 style={{ color: themes["dark"].menu.icon }}
               />
             }
-            label="Vote Average"
+            label="Sort By"
           >
-            <FormGroup>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="8 - 10" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="6 - 8" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="4  6" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="2 - 4" />
-              </MenuItem>
-              <MenuItem>
-                <FormControlLabel control={<Checkbox />} label="0 - 2" />
-              </MenuItem>
-            </FormGroup>
+            <MenuItem>Top Rated</MenuItem>
+            <MenuItem>Most Popular</MenuItem>
+            <MenuItem>Most Recent</MenuItem>
+            <MenuItem>Most Viewed</MenuItem>
           </SubMenu>
         </Menu>
       </Sidebar>

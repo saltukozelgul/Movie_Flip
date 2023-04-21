@@ -55,26 +55,28 @@ export default function HomePage() {
   }, []);
 
   return (
-    <Carousel>
-      {top5.map((item) => (
-        <Carousel.Item item xs={12}>
-          <img
-            className="w-100"
-            src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>{item.original_title}</h3>
-            <h6>{getGenreName(item.genre_ids)}</h6>
-            <Rating
-              name="read-only"
-              value={item.vote_average / 2}
-              readOnly
-            ></Rating>
-            <p>{item.overview}.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <>
+      <Carousel>
+        {top5.map((item) => (
+          <Carousel.Item item xs={12}>
+            <img
+              className="w-100"
+              src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>{item.original_title}</h3>
+              <h6>{getGenreName(item.genre_ids)}</h6>
+              <Rating
+                name="read-only"
+                value={item.vote_average / 2}
+                readOnly
+              ></Rating>
+              <p>{item.overview}.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </>
   );
 }
