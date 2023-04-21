@@ -8,7 +8,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 export const DetailedMoviePage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
-  const [trailer, setTrailer] = useState("");
+  const [trailer, setTrailer] = useState(null);
   const [watchProviders, setWatchProviders] = useState(null);
 
   useEffect(() => {
@@ -24,23 +24,20 @@ export const DetailedMoviePage = () => {
         `
       );
       const data = await response.json();
+      setMovie(data);
       // get the videos from the data object
       const trailerUrl = data.videos.results.find(
         (video) => video.type === "Trailer" && video.site === "YouTube"
       );
       // set the trailer url
-      setTrailer(
-        `https://www.youtube.com/watch?v=${
-          trailerUrl.key ? trailerUrl.key : ""
-        }`
-      );
+      if (trailerUrl) {
+        setTrailer(`https://www.youtube.com/watch?v=${trailerUrl.key}`);
+      }
 
       // get the watch providers from the data object
       const watchProviders = data["watch/providers"].results.US.buy;
       // set the watch providers
       setWatchProviders(watchProviders);
-
-      setMovie(data);
     };
     fetchMovie();
   }, []);
@@ -89,6 +86,7 @@ export const DetailedMoviePage = () => {
                 <>
                   {watchProviders.map((provider) => (
                     <img
+                      key={provider.provider_id}
                       className="provider-logo"
                       src={`https://image.tmdb.org/t/p/original/${provider.logo_path}`}
                       alt={provider.provider_name}

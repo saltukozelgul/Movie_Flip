@@ -49,7 +49,7 @@ export const ListView = (props) => {
   return (
     <Grid container spacing={2}>
       {movies.map((movie) => (
-        <ListViewItem {...movie} />
+        <ListViewItem key={movie.id} {...movie} />
       ))}
     </Grid>
   );
