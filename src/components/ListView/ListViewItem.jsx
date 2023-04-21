@@ -47,7 +47,9 @@ export const ListViewItem = (props) => {
               {vote_average} {"  "}
               <FontAwesomeIcon icon={faStar} />
             </p>
-            <p style={{ color: "white" }}>{release_date.split("-")[0]}</p>
+            <p style={{ color: "white" }}>
+              {release_date ? release_date.split("-")[0] : ""}
+            </p>
           </div>
         </div>
       </Paper>

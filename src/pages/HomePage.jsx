@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 import { Grid, Rating } from "@mui/material";
 import { Carousel } from "react-bootstrap";
 // import process
@@ -36,12 +37,12 @@ export default function HomePage() {
     return genreString.join(", ");
   }
 
-  const API_KEY = "fba65574c0cc3bbdae79f80e0a42c768";
-
   // get trends
   useEffect(() => {
     const randomPage = Math.floor(Math.random() * 100);
-    const DISCOVER_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&include_video=false&page=${randomPage}}`;
+    const DISCOVER_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${
+      import.meta.env.VITE_API_KEY
+    }&language=en-US&include_adult=false&include_video=false&page=${randomPage}`;
     async function fetchData() {
       const response = await fetch(DISCOVER_URL);
       const result = await response.json();

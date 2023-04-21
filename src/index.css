@@ -13,6 +13,15 @@ body {
 .ps-sidebar-container::-webkit-scrollbar {
     display: none !important;
   }
+
+  html::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  html {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none; 
+  }
   
   /* Hide scrollbar for IE, Edge and Firefox */
   .ps-sidebar-container {

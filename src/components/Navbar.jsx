@@ -141,12 +141,47 @@ export default function Navbar(props) {
             <MenuItem component={<Link to="/category/adventure" />}>
               Adventure
             </MenuItem>
+            <MenuItem component={<Link to="/category/animation" />}>
+              Animation
+            </MenuItem>
             <MenuItem component={<Link to="/category/comedy" />}>
               Comedy
             </MenuItem>
+            <MenuItem component={<Link to="/category/crime" />}>Crime</MenuItem>
+            <MenuItem component={<Link to="/category/documentary" />}>
+              Documentary
+            </MenuItem>
+
             <MenuItem component={<Link to="/category/drama" />}>Drama</MenuItem>
+            <MenuItem component={<Link to="/category/family" />}>
+              Family
+            </MenuItem>
             <MenuItem component={<Link to="/category/fantasy" />}>
               Fantasy
+            </MenuItem>
+            <MenuItem component={<Link to="/category/history" />}>
+              History
+            </MenuItem>
+            <MenuItem component={<Link to="/category/horror" />}>
+              Horror
+            </MenuItem>
+            <MenuItem component={<Link to="/category/music" />}>Music</MenuItem>
+            <MenuItem component={<Link to="/category/mystery" />}>
+              Mystery
+            </MenuItem>
+            <MenuItem component={<Link to="/category/romance" />}>
+              Romance
+            </MenuItem>
+            <MenuItem component={<Link to="/category/science" />}>
+              Science
+            </MenuItem>
+            <MenuItem component={<Link to="/category/tv" />}>TV</MenuItem>
+            <MenuItem component={<Link to="/category/thriller" />}>
+              Thriller
+            </MenuItem>
+            <MenuItem component={<Link to="/category/war" />}>War</MenuItem>
+            <MenuItem component={<Link to="/category/western" />}>
+              Western
             </MenuItem>
           </SubMenu>
           <SubMenu
