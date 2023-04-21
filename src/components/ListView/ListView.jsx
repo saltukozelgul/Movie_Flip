@@ -44,7 +44,6 @@ export const ListView = (props) => {
       setMovies(data.results);
     };
     fetchMovies();
-    console.log(movies);
   }, [category]);
 
   return (

@@ -52,7 +52,6 @@ export default function HomePage() {
       setTop5(selected);
     }
     fetchData();
-    console.log(top5);
   }, []);
 
   return (

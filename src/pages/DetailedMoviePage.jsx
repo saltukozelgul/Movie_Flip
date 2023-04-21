@@ -39,10 +39,8 @@ export const DetailedMoviePage = () => {
       setMovie(data);
     };
     fetchMovie();
-    console.log(movie);
   }, []);
 
-  console.log(movie);
   return movie ? (
     <Box
       style={{

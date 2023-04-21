@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 export const ListViewItem = (props) => {
-  console.log(props);
   const { id, title, poster_path, overview, vote_average, release_date } =
     props;
   return (

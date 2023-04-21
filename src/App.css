@@ -2,16 +2,3 @@ body {
     background-color: #051423;
 }
 
-.ps-sidebar-root {
-    border-right-style: none;
-}
-
-.ps-sidebar-container::-webkit-scrollbar {
-    display: none !important;
-  }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .ps-sidebar-container {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
