@@ -29,7 +29,11 @@ export const DetailedMoviePage = () => {
         (video) => video.type === "Trailer" && video.site === "YouTube"
       );
       // set the trailer url
-      setTrailer(`https://www.youtube.com/watch?v=${trailerUrl.key}`);
+      setTrailer(
+        `https://www.youtube.com/watch?v=${
+          trailerUrl.key ? trailerUrl.key : ""
+        }`
+      );
 
       // get the watch providers from the data object
       const watchProviders = data["watch/providers"].results.US.buy;
