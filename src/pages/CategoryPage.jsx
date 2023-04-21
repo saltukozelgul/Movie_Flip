@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -17,5 +16,3 @@ export const CategoryPage = () => {
     </Box>
   );
 };
-
-export default withRouter(CategoryPage);
