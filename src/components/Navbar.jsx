@@ -200,7 +200,7 @@ export default function Navbar(props) {
           </SubMenu>
         </Menu>
       </Sidebar>
-      <main>{props.children}</main>
+      <main style={{ flex: "auto" }}>{props.children}</main>
     </div>
   );
 }
